@@ -1,0 +1,9 @@
+{
+  "name": "live-nodebr-graphql",
+  "version": "1.0.0",
+  "description": "Exemplo para a live que ocorrerá no dia 11/04/18",
+  "main": "app.js",
+  "repository": "https://github.com/khaosdoctor/live-nodebr-graphql.git",
+  "author": "Lucas Santos <lhs.santoss@gmail.com>",
+  "license": "MIT"
+}
