@@ -2,8 +2,19 @@
   "name": "live-nodebr-graphql",
   "version": "1.0.0",
   "description": "Exemplo para a live que ocorrerá no dia 11/04/18",
-  "main": "app.js",
+  "main": "src/server.js",
   "repository": "https://github.com/khaosdoctor/live-nodebr-graphql.git",
   "author": "Lucas Santos <lhs.santoss@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  },
+  "dependencies": {
+    "apollo-server-hapi": "^1.3.4",
+    "graphql": "^0.13.2",
+    "hapi": "^17.3.1"
+  }
 }
