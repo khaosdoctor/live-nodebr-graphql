@@ -4,7 +4,7 @@ const {graphqlHapi, graphiqlHapi} = require('apollo-server-hapi')
 const BookSchema = require('./books.schema')
 const server = Hapi.server({ host: 'localhost', port: 4545 })
 
-async function registerRoutes () {
+async function registerRoutes () { // Registra uma rota padrão de status
   server.route({
     method: 'GET',
     path: '/',
@@ -15,17 +15,24 @@ async function registerRoutes () {
 
 async function registerGraphQL () {
   await server.register({
-    plugin: graphqlHapi,
+    plugin: graphqlHapi, // Registra o servidor GraphQL de produção
     options: {
-      path: '/graph',
-      graphqlOptions: { schema: new GraphQLSchema({}) },
-      route: { cors: false }
+      path: '/graph', // Nosso endpoint
+      graphqlOptions: { schema: BookSchema, debug: true }, // Cria um schema para podermos utilizar
+      route: { cors: false } // Desativamos o cors só para motivos didáticos
     }
   })
 
   await server.register({
-    plugin: graphiqlHapi,
-    options: { path: '/graphiql', graphiqlOptions: { endpointURL: '/graph' } }
+    plugin: graphiqlHapi, // Registramos o GraphiQL para dev
+    options: {
+      path: '/graphiql', // Endpoint do GraphiQL
+      graphiqlOptions: {
+        endpointURL: '/graph', // Endpoint GraphQL que ele vai apontar
+        formatError: (error) => ({message: error.message, location: error.location, stack: error.stack}), // Ativamos a formatação de erros
+        debug: true // Modo de debug
+      }
+    }
   })
 }
 
