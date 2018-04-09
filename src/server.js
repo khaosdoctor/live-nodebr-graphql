@@ -1,7 +1,7 @@
 'use strict'
 const Hapi = require('hapi')
 const {graphqlHapi, graphiqlHapi} = require('apollo-server-hapi')
-const {GraphQLSchema} = require('graphql')
+const BookSchema = require('./books.schema')
 const server = Hapi.server({ host: 'localhost', port: 4545 })
 
 async function registerRoutes () {
