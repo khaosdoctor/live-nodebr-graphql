@@ -29,4 +29,6 @@
 - https://speakerdeck.com/khaosdoctor/graphql-para-iniciantes
 - https://github.com/khaosdoctor/gotql
 
+Você pode assistir a live [neste link](https://www.youtube.com/watch?v=GU2nu9u7qOA)
+
 Para dúvidas e qualquer outra coisa, posso ser encontrado em [@_staticvoid](https://twitter.com/_staticvoid) ou no [meu site](https://lsantos.me).
